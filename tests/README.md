@@ -13,15 +13,33 @@
 - **Requer instalação**: `npm install`
 - **Execução**: `npm run test:jest`
 
-### 3. `setup.js`
+### 3. `danteCell/danteCell.simple.test.js`
+- **Versão simplificada** para testes do DanteCell
+- **Testa a função `openPuzzle()`** da classe DanteCell
+- **Cobre criação do puzzle e lógica de verificação**
+- **Execução direta**: `node tests/danteCell/danteCell.simple.test.js`
+
+### 4. `danteCell/danteCell.test.js`
+- **Versão completa** usando Jest para testes do DanteCell
+- **Testes organizados em grupos**: criação, lógica de verificação e interatividade
+- **Execução**: `npm run test:jest`
+
+### 5. `setup.js`
 - **Configuração do Jest** para simular o ambiente Phaser.js
 - **Mocks das dependências** necessárias para os testes
 
 ## Como Executar os Testes
 
 ### Opção 1: Teste Simplificado (Recomendado)
+
+**Para DataCenterPC:**
 ```bash
 node tests/dataCenterPC/dataCenterPC.simple.test.js
+```
+
+**Para DanteCell:**
+```bash
+node tests/danteCell/danteCell.simple.test.js
 ```
 
 ### Opção 2: Teste com Jest
@@ -35,7 +53,9 @@ npm run test:jest
 npm test
 ```
 
-### Funcionalidades Testadas:
+## Funcionalidades Testadas
+
+### DataCenterPC - Funcionalidades Testadas:
 
 1. **Criação do Popup**
    - Verifica se `popupOpen` é definido como `true`
@@ -60,6 +80,36 @@ npm test
    - Verifica se `closePuzzle()` limpa corretamente os objetos
    - Confirma se `popupOpen` volta para `false`
 
+### DanteCell - Funcionalidades Testadas:
+
+1. **Criação do Puzzle**
+   - Verifica se `popupOpen` é definido como `true`
+   - Confirma se o container do puzzle é criado
+   - Testa criação de 4 textos binários interativos
+
+2. **Sequência Inicial**
+   - Verifica se a sequência inicial é `[0, 1, 0, 1]`
+   - Confirma que 4 elementos binários são criados
+
+3. **Elementos da Interface**
+   - Botão de verificar com estilo correto
+   - Botão de fechar (X)
+   - Mensagem do puzzle para feedback
+
+4. **Lógica de Verificação**
+   - Testa se a sequência correta é `"0110"`
+   - Verifica mensagens de sucesso e falha
+   - Confirma mudança de cor das mensagens
+
+5. **Gerenciamento de Visibilidade**
+   - Ocultação de `titleText` e `criptoIcon` quando puzzle abre
+   - Restauração da visibilidade quando puzzle fecha
+   - Limpeza correta dos recursos
+
+6. **Interatividade**
+   - Configuração de interatividade nos textos binários
+   - Interatividade nos botões de verificar e fechar
+
 ## Estrutura dos Testes
 
 ### Mock Classes Criadas:
@@ -69,8 +119,11 @@ npm test
 - `MockCameras`: Simula `this.cameras` do Phaser
 - `MockCoinBar`: Simula a classe CoinBar
 - `MockCoreBar`: Simula a classe CoreBar
+- `MockVisibility`: Simula elementos com propriedade visible (DanteCell)
 
-### Função Testada:
+### Funções Testadas:
+
+**DataCenterPC:**
 ```javascript
 openPuzzle() {
     // Cria popup do puzzle
@@ -80,7 +133,21 @@ openPuzzle() {
 }
 ```
 
+**DanteCell:**
+```javascript
+openPuzzle() {
+    // Cria container do puzzle
+    // Configura 4 textos binários interativos
+    // Adiciona botões de verificar e fechar
+    // Configura lógica de verificação (sequência "0110")
+}
+
+closePuzzle() {
+    // Limpa recursos do puzzle
+    // Restaura visibilidade dos elementos
+}
 ```
+
 ## Scripts Disponíveis
 
 ```json

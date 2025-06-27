@@ -2,13 +2,14 @@
 
 ## Execução Rápida
 
-Para executar os testes unitários:
+### Teste simplificado (recomendado)
 
 ```bash
-# teste simplificado (recomendado)
-node tests/dataCenterPC/dataCenterPC.simple.test.js
+node tests/danteCell/danteCell.simple.test.js
+```
+### Usando npm (roda todos os testes)
 
-# usando npm
+```bash
 npm test
 ```
 ## Documentação Completa
