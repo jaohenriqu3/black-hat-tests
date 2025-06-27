@@ -24,7 +24,18 @@
 - **Testes organizados em grupos**: criação, lógica de verificação e interatividade
 - **Execução**: `npm run test:jest`
 
-### 5. `setup.js`
+### 5. `blackLock/blackLock.simple.test.js`
+- **Versão simplificada** para testes do BlackLock
+- **Testa a função `openPuzzle()`** da classe BlackLock
+- **Cobre criação do puzzle, lógica de operações e feedback**
+- **Execução direta**: `node tests/blackLock/blackLock.simple.test.js`
+
+### 6. `blackLock/blackLock.test.js`
+- **Versão completa** usando Jest para testes do BlackLock
+- **Testes organizados em grupos**: criação, lógica de operações, feedback e visuais
+- **Execução**: `npm run test:jest`
+
+### 7. `setup.js`
 - **Configuração do Jest** para simular o ambiente Phaser.js
 - **Mocks das dependências** necessárias para os testes
 
@@ -40,6 +51,11 @@ node tests/dataCenterPC/dataCenterPC.simple.test.js
 **Para DanteCell:**
 ```bash
 node tests/danteCell/danteCell.simple.test.js
+```
+
+**Para BlackLock:**
+```bash
+node tests/blackLock/blackLock.simple.test.js
 ```
 
 ### Opção 2: Teste com Jest
@@ -110,6 +126,33 @@ npm test
    - Configuração de interatividade nos textos binários
    - Interatividade nos botões de verificar e fechar
 
+### BlackLock - Funcionalidades Testadas:
+
+1. **Criação do Puzzle**
+   - Criação do background do puzzle
+   - Criação do texto da chave alvo
+   - Criação dos blocos de bits e textos
+   - Criação do texto de resultado
+   - Criação dos botões de operação (AND, OR, XOR, NOT)
+
+2. **Lógica de Operações**
+   - Teste das operações AND, OR, XOR, NOT
+   - Verificação do resultado exibido
+
+3. **Feedback e Resultados**
+   - Mensagem de sucesso quando resultado correto
+   - Mensagem de falha quando resultado incorreto
+   - Perda de core quando falha
+   - Transição para BlackOffice ou GameOver
+
+4. **Configurações Visuais**
+   - Cores corretas nos elementos
+   - Padding nos textos dos bits e botões
+   - Depth correto nos elementos
+
+5. **Interatividade**
+   - Botões de operação são interativos
+
 ## Estrutura dos Testes
 
 ### Mock Classes Criadas:
@@ -145,6 +188,20 @@ openPuzzle() {
 closePuzzle() {
     // Limpa recursos do puzzle
     // Restaura visibilidade dos elementos
+}
+```
+
+**BlackLock:**
+```javascript
+openPuzzle() {
+    // Cria background, textos, blocos de bits, botões e resultado
+    // Configura operações lógicas (AND, OR, XOR, NOT)
+    // Adiciona feedback visual e transições
+}
+
+applyOperation(op, targetKey) {
+    // Executa operação lógica e atualiza resultado
+    // Mostra feedback de sucesso ou falha
 }
 ```
 
