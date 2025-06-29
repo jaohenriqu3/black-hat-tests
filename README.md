@@ -36,6 +36,7 @@ node tests/danteCell/danteCell.simple.test.js
 
 Para mais detalhes sobre os testes, consulte:
 - [Documentação dos Testes](tests/README.md)
+- [Requisitos Mínimos do Sistema](REQUISITOS_MINIMOS.md)
 
 ## Scripts Disponíveis
 
