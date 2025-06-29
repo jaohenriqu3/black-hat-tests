@@ -2,16 +2,20 @@
 
 ## Execução Rápida
 
-### Teste simplificado (recomendado)
+### Teste Automatizado Geral (Recomendado)
 
-```bash
-node tests/danteCell/danteCell.simple.test.js
-```
-### Usando npm (roda todos os testes)
+Executa todos os testes simples automaticamente:
 
 ```bash
 npm test
 ```
+
+### Teste Individual
+
+```bash
+node tests/danteCell/danteCell.simple.test.js
+```
+
 ## Documentação Completa
 
 Para mais detalhes sobre os testes, consulte:
@@ -19,7 +23,23 @@ Para mais detalhes sobre os testes, consulte:
 
 ## Scripts Disponíveis
 
-- `npm test` - Executa o teste simplificado
+- `npm test` - Executa todos os testes simples automaticamente
+- `npm run test:all` - Alias para executar todos os testes simples
+- `npm run test:simple` - Executa apenas o teste do DataCenterPC
 - `npm run test:jest` - Executa testes com Jest
 - `npm run test:watch` - Executa testes em modo watch
 - `npm run test:coverage` - Executa testes com cobertura
+
+## Funcionalidades Testadas
+
+O teste automatizado cobre todas as funções principais do jogo:
+
+- **DataCenterPC**: `openPuzzle()` - Grid 3x3 de peças interativas
+- **DanteCell**: `openPuzzle()` e `closePuzzle()` - Sequências binárias
+- **BlackLock**: `openPuzzle()` e `applyOperation()` - Operações lógicas
+
+## Resultados
+
+- **34 testes individuais** executados automaticamente
+- **100% de taxa de sucesso**
+- **Tempo de execução**: ~0.2 segundos

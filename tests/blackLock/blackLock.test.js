@@ -1,3 +1,5 @@
+import BlackLock from '../../black-hat/src/scenes/cap4/blackLock.js';
+
 class MockPhaser {
     constructor() {
         this.Scene = class MockScene {
@@ -145,11 +147,11 @@ describe('BlackLock - openPuzzle()', () => {
         mockPhaser = new MockPhaser();
         global.Phaser = mockPhaser;
         
-        jest.mock('./black-hat/src/components/coinBar/coinBar.js', () => mockCoinBar);
-        jest.mock('./black-hat/src/components/coreBar/coreBar.js', () => mockCoreBar);
-        jest.mock('./black-hat/src/state/gameState.js', () => mockGameState);
+        jest.mock('../../black-hat/src/components/coinBar/coinBar.js', () => mockCoinBar);
+        jest.mock('../../black-hat/src/components/coreBar/coreBar.js', () => mockCoreBar);
+        jest.mock('../../black-hat/src/state/gameState.js', () => mockGameState);
         
-        const BlackLock = require('./black-hat/src/scenes/cap4/blackLock.js').default;
+        const BlackLock = require('../../black-hat/src/scenes/cap4/blackLock.js').default;
         blackLock = new BlackLock();
         
         blackLock.popupOpen = false;
@@ -232,7 +234,7 @@ describe('BlackLock - Lógica de Operações', () => {
         const mockPhaser = new MockPhaser();
         global.Phaser = mockPhaser;
         
-        const BlackLock = require('./black-hat/src/scenes/cap4/blackLock.js').default;
+        const BlackLock = require('../../black-hat/src/scenes/cap4/blackLock.js').default;
         blackLock = new BlackLock();
         blackLock.add = new MockAdd();
         blackLock.coreBar = new mockCoreBar();
@@ -276,7 +278,7 @@ describe('BlackLock - Resultados e Feedback', () => {
         const mockPhaser = new MockPhaser();
         global.Phaser = mockPhaser;
         
-        const BlackLock = require('./black-hat/src/scenes/cap4/blackLock.js').default;
+        const BlackLock = require('../../black-hat/src/scenes/cap4/blackLock.js').default;
         blackLock = new BlackLock();
         blackLock.add = new MockAdd();
         blackLock.coreBar = new mockCoreBar();
@@ -348,7 +350,7 @@ describe('BlackLock - Configurações Visuais', () => {
         const mockPhaser = new MockPhaser();
         global.Phaser = mockPhaser;
         
-        const BlackLock = require('./black-hat/src/scenes/cap4/blackLock.js').default;
+        const BlackLock = require('../../black-hat/src/scenes/cap4/blackLock.js').default;
         blackLock = new BlackLock();
         blackLock.add = new MockAdd();
         blackLock.coreBar = new mockCoreBar();

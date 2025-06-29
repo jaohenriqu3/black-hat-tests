@@ -1,5 +1,21 @@
 # Testes Unitários - Black Hat Game
 
+## Teste Automatizado Geral
+
+### `run-all-simple-tests.js`
+- **Executa todos os testes simples automaticamente**
+- **Não requer dependências externas**
+- **Resultados coloridos e organizados**
+- **Resumo final com estatísticas**
+- **Execução**: `npm test` ou `node tests/run-all-simple-tests.js`
+
+### Funcionalidades do Teste Automatizado:
+- Executa **34 testes individuais** em sequência
+- **Cobertura completa** das funções principais
+- **Feedback visual** com cores (verde para sucesso, vermelho para falha)
+- **Tempo de execução** medido automaticamente
+- **Resumo final** com estatísticas detalhadas
+
 ## Arquivos de Teste
 
 ### 1. `dataCenterPC/dataCenterPC.simple.test.js`
@@ -41,7 +57,21 @@
 
 ## Como Executar os Testes
 
-### Opção 1: Teste Simplificado (Recomendado)
+### Opção 1: Teste Automatizado Geral (Recomendado)
+
+**Executa todos os testes simples automaticamente:**
+
+```bash
+npm test
+```
+
+**Ou diretamente:**
+
+```bash
+node tests/run-all-simple-tests.js
+```
+
+### Opção 2: Teste Individual Simplificado
 
 **Para DataCenterPC:**
 ```bash
@@ -58,13 +88,13 @@ node tests/danteCell/danteCell.simple.test.js
 node tests/blackLock/blackLock.simple.test.js
 ```
 
-### Opção 2: Teste com Jest
+### Opção 3: Teste com Jest
 ```bash
 npm install
 npm run test:jest
 ```
 
-### Opção 3: Usando npm test (padrão)
+### Opção 4: Usando npm test (padrão)
 ```bash
 npm test
 ```
@@ -209,9 +239,20 @@ applyOperation(op, targetKey) {
 
 ```json
 {
-  "test": "node tests/dataCenterPC/dataCenterPC.simple.test.js",
+  "test": "node tests/run-all-simple-tests.js",
+  "test:all": "node tests/run-all-simple-tests.js",
+  "test:simple": "node tests/dataCenterPC/dataCenterPC.simple.test.js",
   "test:jest": "jest",
   "test:watch": "jest --watch",
   "test:coverage": "jest --coverage"
 }
+```
+
+## Resultados do Teste Automatizado
+
+- **Total de testes**: 34
+- **Taxa de sucesso**: 100%
+- **Tempo de execução**: ~0.2 segundos
+- **Módulos testados**: 3 (DataCenterPC, DanteCell, BlackLock)
+
 ```

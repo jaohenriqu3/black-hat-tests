@@ -4,10 +4,12 @@
   "description": "Testes unitários para o jogo Black Hat",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/dataCenterPC/dataCenterPC.simple.test.js",
+    "test": "node tests/run-all-simple-tests.js",
+    "test:simple": "node tests/dataCenterPC/dataCenterPC.simple.test.js",
     "test:jest": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:all": "node tests/run-all-simple-tests.js"
   },
   "devDependencies": {
     "jest": "^29.7.0",
