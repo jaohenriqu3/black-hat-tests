@@ -1,4 +1,4 @@
-# Testes Unitários - Black Hat Game
+# Testes - Black Hat Game
 
 ## Teste Automatizado Geral
 
