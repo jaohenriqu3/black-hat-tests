@@ -10,6 +10,14 @@ Executa todos os testes simples automaticamente:
 npm test
 ```
 
+### Teste de Integração (executar separadamente)
+
+Executa apenas o teste de integração entre cenas, cutscenes e screens:
+
+```bash
+node tests/integration-test.js
+```
+
 ### Teste Individual
 
 ```bash
@@ -29,6 +37,7 @@ Para mais detalhes sobre os testes, consulte:
 - `npm run test:jest` - Executa testes com Jest
 - `npm run test:watch` - Executa testes em modo watch
 - `npm run test:coverage` - Executa testes com cobertura
+- **`node tests/integration-test.js`** - Executa apenas o teste de integração entre cenas
 
 ## Funcionalidades Testadas
 
@@ -37,6 +46,8 @@ O teste automatizado cobre todas as funções principais do jogo:
 - **DataCenterPC**: `openPuzzle()` - Grid 3x3 de peças interativas
 - **DanteCell**: `openPuzzle()` e `closePuzzle()` - Sequências binárias
 - **BlackLock**: `openPuzzle()` e `applyOperation()` - Operações lógicas
+
+O teste de integração verifica a comunicação entre todas as cenas, cutscenes e screens do projeto, além de dependências e transições.
 
 ## Resultados
 
