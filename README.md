@@ -18,6 +18,14 @@ Executa apenas o teste de integração entre cenas, cutscenes e screens:
 node tests/integration-test.js
 ```
 
+### Teste de Performance (executar separadamente)
+
+Analisa todo o jogo de ponta a ponta, estimando tempo de carregamento e performance:
+
+```bash
+node tests/performance-test.js
+```
+
 ### Teste Individual
 
 ```bash
@@ -38,6 +46,7 @@ Para mais detalhes sobre os testes, consulte:
 - `npm run test:watch` - Executa testes em modo watch
 - `npm run test:coverage` - Executa testes com cobertura
 - **`node tests/integration-test.js`** - Executa apenas o teste de integração entre cenas
+- **`node tests/performance-test.js`** - Executa apenas o teste de performance geral
 
 ## Funcionalidades Testadas
 
@@ -48,6 +57,12 @@ O teste automatizado cobre todas as funções principais do jogo:
 - **BlackLock**: `openPuzzle()` e `applyOperation()` - Operações lógicas
 
 O teste de integração verifica a comunicação entre todas as cenas, cutscenes e screens do projeto, além de dependências e transições.
+
+O teste de performance analisa todo o jogo de ponta a ponta, incluindo:
+- Tamanho total dos assets
+- Número de cenas, componentes, prefabs e NPCs
+- Tempo estimado de carregamento
+- Score de performance geral
 
 ## Resultados
 

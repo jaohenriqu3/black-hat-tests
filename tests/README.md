@@ -31,6 +31,31 @@ node tests/integration-test.js
 - **O teste de integração NÃO é executado junto com o teste automatizado principal.**
 - **Execute manualmente quando quiser validar a arquitetura e comunicação entre módulos.**
 
+## Teste de Performance (executar separadamente)
+
+### `performance-test.js`
+- **Analisa todo o jogo de ponta a ponta**
+- **Calcula tamanho total dos assets**
+- **Conta cenas, componentes, prefabs, NPCs e screens**
+- **Estima tempo de carregamento**
+- **Gera score de performance geral**
+- **Execução**:
+
+```bash
+node tests/performance-test.js
+```
+
+- **O teste de performance NÃO é executado junto com o teste automatizado principal.**
+- **Execute manualmente quando quiser analisar a performance geral do jogo.**
+
+### Funcionalidades do Teste de Performance:
+- **Análise recursiva** de todas as pastas do projeto
+- **Cálculo de tamanho** de assets (imagens, áudios, fontes, etc.)
+- **Contagem de elementos** (cenas, componentes, prefabs, NPCs, screens)
+- **Estimativa de tempo** de carregamento baseada no tamanho dos assets
+- **Score de performance** baseado em complexidade e tamanho
+- **Análise de estrutura** de pastas e arquivos
+
 ## Arquivos de Teste
 
 ### 1. `dataCenterPC/dataCenterPC.simple.test.js`
@@ -75,6 +100,11 @@ node tests/integration-test.js
 - **Verifica comunicação entre cenas, cutscenes e screens**
 - **Execução**: `node tests/integration-test.js`
 
+### 9. `performance-test.js`
+- **Teste de performance** (executar separadamente)
+- **Analisa todo o jogo de ponta a ponta**
+- **Execução**: `node tests/performance-test.js`
+
 ## Como Executar os Testes
 
 ### Opção 1: Teste Automatizado Geral (Recomendado)
@@ -97,7 +127,13 @@ node tests/run-all-simple-tests.js
 node tests/integration-test.js
 ```
 
-### Opção 3: Teste Individual Simplificado
+### Opção 3: Teste de Performance (Separado)
+
+```bash
+node tests/performance-test.js
+```
+
+### Opção 4: Teste Individual Simplificado
 
 **Para DataCenterPC:**
 ```bash
@@ -114,7 +150,7 @@ node tests/danteCell/danteCell.simple.test.js
 node tests/blackLock/blackLock.simple.test.js
 ```
 
-### Opção 4: Teste com Jest
+### Opção 5: Teste com Jest
 ```bash
 npm install
 npm run test:jest
